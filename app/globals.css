@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg: #000000;
+  --color-fg: #ffffff;
+  --color-accent: #fbcc5c;
+  --border-radius: 0.5rem;
+}
+
+.theme-celo {
+  --color-bg: #000000;
+  --color-fg: #ffffff;
+  --color-accent: #fbcc5c;
+  --border-radius: 0.5rem;
+}
+
+.theme-default {
+  --color-bg: #0b1120;
+  --color-fg: #f1f5f9;
+  --color-accent: #5eead4;
+  --border-radius: 1rem;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+}
