@@ -1,0 +1,63 @@
+{
+  "version": "1.0",
+  "projectId": "my-celo-app-222",
+  "projectType": "nextjs",
+  "framework": "nextjs",
+  "packageManager": "npm",
+  "processes": [
+    {
+      "processType": "web",
+      "command": "npm run start",
+      "description": "Main application process"
+    },
+    {
+      "processType": "build",
+      "command": "npm run build",
+      "description": "Build process"
+    }
+  ],
+  "environment": {
+    "NEXT_PUBLIC_API_URL": "https://api.example.com",
+    "NODE_ENV": "production",
+    "PROJECT_ID": "my-celo-app-222"
+  },
+  "deployment": {
+    "strategy": "vercel",
+    "buildCommand": "npm run build",
+    "startCommand": "npm run start",
+    "installCommand": "npm install",
+    "healthCheck": {
+      "endpoint": "/api/health",
+      "command": "curl localhost:3000/api/health",
+      "timeout": 30000
+    }
+  },
+  "docker": {
+    "dockerfile": "Dockerfile",
+    "baseImage": "node:16-alpine",
+    "ports": [
+      3000
+    ]
+  },
+  "vercel": {
+    "framework": "nextjs",
+    "buildCommand": "npm run build",
+    "outputDirectory": ".next",
+    "installCommand": "npm install"
+  },
+  "custom": {
+    "commands": [
+      "npm run build",
+      "npm run start"
+    ],
+    "environment": {
+      "NEXT_PUBLIC_API_URL": "https://api.example.com"
+    }
+  },
+  "metadata": {
+    "createdAt": "2025-09-24T15:18:26.988Z",
+    "updatedAt": "2025-09-24T15:18:26.988Z",
+    "generatedBy": "zara-llm",
+    "version": "1.0.0"
+  }
+}
